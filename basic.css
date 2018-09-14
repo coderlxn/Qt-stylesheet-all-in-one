@@ -1,0 +1,123 @@
+﻿QPushButton#pushButton_lauch_accept, QPushButton[accessibleName="AcceptButton"]{
+    min-width: 78px;
+    min-height: 30px;
+    background-color:#484C5B;
+    color:#fff;
+    border:none;
+    border-radius:3px;
+}
+QPushButton#pushButton_lauch_accept:hover, QPushButton[accessibleName="AcceptButton"]:hover{
+    background-color:#404452;
+}
+QPushButton#pushButton_lauch_accept:pressed, QPushButton[accessibleName="AcceptButton"]:pressed{
+    background-color:#393C48;
+}
+
+QPushButton#pushButton_lauch_reject, QPushButton[accessibleName="NormalButton"]{
+    min-width: 78px;
+    min-height: 30px;
+    background-color:#fff;
+    color:#494949;
+    border: 1px solid #DDD;
+    border-radius:3px;
+}
+QPushButton#pushButton_lauch_reject:hover, QPushButton[accessibleName="NormalButton"]:hover{
+    border: 1px solid #484C5B;
+}
+QPushButton#pushButton_lauch_reject:pressed, QPushButton[accessibleName="NormalButton"]:pressed{
+    border: 1px solid #484C5B;
+}
+
+/***------------QMenu---------------***/
+/*Qt有个bug，如果使用自定义的样式，不能同时显示选中和图标 https://bugreports.qt.io/browse/QTBUG-66380?attachmentSortBy=dateTime*/
+QMenu{
+    background-color:#fff;
+    color:#494949;
+}
+
+QMenu::item {
+    padding:5px 22px;
+}
+
+QMenu::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: #F7F7F7;
+}
+
+QMenu::item:disabled {
+    color:#b0b0b0;
+}
+
+QMenu[accessibleName="IconMenu"]{
+    margin: 10px 0px; /*没有效果*/
+    padding:10px 0px;
+}
+
+QMenu[accessibleName="IconMenu"]::item {
+    min-height:40px;
+    padding:0px 30px 0px 54px;
+}
+
+QMenu[accessibleName="IconMenu"]::icon {
+    width:16px;
+    height:32px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 30px;
+}
+
+QMenu[accessibleName="IndicatorMenu"]{
+    padding:10px 0px;
+}
+
+QMenu[accessibleName="IndicatorMenu"]::item {
+    min-height:30px;
+    padding:0px 40px;
+}
+
+QMenu[accessibleName="IndicatorMenu"]::indicator {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 15px;
+}
+
+/***------------QComboBox---------------***/
+/*这个地方的indicator会丢掉，所以实际实现的时候可以考虑改成button+menu来实现*/
+QComboBox QAbstractItemView {
+    background-color:#FFF;
+}
+
+QComboBox QAbstractItemView::item {
+    background-color:#FFF;
+    min-height:30px;
+}
+
+/*这种方式有个缺陷，需要在外部计算listview的宽度*/
+QListView[accessibleName="ComboxView"] {
+    padding:10px 0px;
+}
+
+QListView[accessibleName="ComboxView"]::item {
+    padding:0px 30px;
+    height:30px;
+}
+
+QListView[accessibleName="ComboxView"]::item:selected {
+    background-color:#F7F7F7;
+    color:#494949;
+}
+
+QListView[accessibleName="ComboxView"]::indicator {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 15px;
+}
